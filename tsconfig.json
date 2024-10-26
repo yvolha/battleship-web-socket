@@ -1,0 +1,31 @@
+{
+    "compilerOptions": {
+      "rootDir": "src",
+      "forceConsistentCasingInFileNames": true,
+      "allowSyntheticDefaultImports": true,
+      "esModuleInterop": true,
+      "lib": ["ES2020"],
+      "module": "ES6",
+      "moduleResolution": "Node",
+      "noUncheckedIndexedAccess": true,
+      "strictNullChecks": true,
+      "noUnusedLocals": true,
+      "noUnusedParameters": true,
+      "outDir": "dist",
+      "removeComments": true,
+      "resolveJsonModule": true,
+      "skipLibCheck": true,
+      "sourceMap": true,
+      "strict": true,
+      "strictPropertyInitialization": false,
+      "target": "ES6",
+      "allowJs": true,
+      "types": ["@types/node"],
+    },
+    "include": ["src/**/*"],
+    "exclude": ["node_modules"],
+    "lib": ["ESNext"],
+    "ts-node": {
+      "esm": true
+    }
+  }
