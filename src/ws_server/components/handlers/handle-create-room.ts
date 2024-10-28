@@ -1,8 +1,8 @@
 import { CustomWebSocket } from "../../../index.js";
-import { roomsDb, usersDb } from "../../database/database";
-import { createGameRoomId } from "../../utils/create-id";
-import { getRoomCreatedMessage } from "../../utils/get-success-messages";
-import { sendAvailableRooms } from "./update-rooms";
+import { roomsDb, usersDb } from "../../database/database.js";
+import { createGameRoomId } from "../../utils/create-id.js";
+import { getRoomCreatedMessage } from "../../utils/get-success-messages.js";
+import { sendAvailableRooms } from "./update-rooms.js";
 
 export const handleCreateRoom = (wsClient: CustomWebSocket) => {
     const index = wsClient.id;
