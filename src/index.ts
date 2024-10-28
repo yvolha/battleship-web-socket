@@ -5,11 +5,7 @@ import { createWsId } from "./ws_server/utils/create-id.js";
 import { getHttpServerStartedMessage, getWsServerStartedMessage } from "./ws_server/utils/get-info-messages.js";
 import { ERROR_MESSAGES } from "./ws_server/constants/error-messages.js";
 
-export interface ICustomWsClient extends WebSocket {
-  id: number;
-}
-
-class CustomWebSocket extends WebSocket {
+export class CustomWebSocket extends WebSocket {
   id = createWsId();
 }
 
@@ -35,7 +31,7 @@ wss.on("connection", function connection(wsClient) {
 
     wsClient.on("message", function message(data) {
       if (data !== null) {
-       // handleWsClientMessage(data, wsClient);
+       
       } else {
         console.log(ERROR_MESSAGES.NO_DATA_RECEIVED);
       }
