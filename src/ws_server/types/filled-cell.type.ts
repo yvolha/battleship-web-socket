@@ -5,6 +5,7 @@ export interface IFilledCell {
     type: IShipTypes;
     length: number;
     position: IPosition;
+    direction: boolean;
     shots: IPosition[];
     missesAround: IPosition[];
     status: string;

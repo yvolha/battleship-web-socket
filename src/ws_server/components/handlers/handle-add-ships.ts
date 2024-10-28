@@ -45,6 +45,7 @@ export const handleAddShips = (parsedMessage: IParsedMessage) => {
         }
       });
     }
+    console.log('boardsDb',JSON.stringify(boardsDb));
   };
 
   
@@ -67,6 +68,7 @@ export const handleAddShips = (parsedMessage: IParsedMessage) => {
         type,
         length,
         position,
+        direction,
         shots: [],
         missesAround: [],
         status: "ok",
