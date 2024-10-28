@@ -1,23 +1,18 @@
 import { RawData } from "ws";
 import { ERROR_MESSAGES } from "../constants/error-messages";
 import { CustomWebSocket } from "../../index";
-import { WS_MESSAGE_TYPES } from "./handle-message.type";
+import { IParsedMessage } from "./handle-message.type";
+import { WS_MESSAGE_TYPES } from "../constants/message-types";
+import { handleReg } from "./handlers/handle-reg";
 
-
-
-export interface IParsedMessage {
-  type: string;
-  data: object;
-  id: number;
-}
 
 export default async function handleMessage (rawData: RawData, wsClient: CustomWebSocket) {
   const parsedMessage: IParsedMessage = JSON.parse(rawData.toString());
-  //onsole.log(parsedMessage);
+  console.log(parsedMessage);
 
   switch (parsedMessage.type) {
     case WS_MESSAGE_TYPES.reg:
-      // handler
+        handleReg(parsedMessage, wsClient, WS_MESSAGE_TYPES.reg);
       break;
 
     case WS_MESSAGE_TYPES.create_room:
