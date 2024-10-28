@@ -1,9 +1,9 @@
 import { RawData } from "ws";
-import { ERROR_MESSAGES } from "../constants/error-messages";
-import { CustomWebSocket } from "../../index";
-import { IParsedMessage } from "./handle-message.type";
-import { WS_MESSAGE_TYPES } from "../constants/message-types";
-import { handleReg } from "./handlers/handle-reg";
+import { ERROR_MESSAGES } from "../constants/error-messages.js";
+import { CustomWebSocket } from "../../index.js";
+import { IParsedMessage } from "./handle-message.type.js";
+import { WS_MESSAGE_TYPES } from "../constants/message-types.js";
+import { handleReg } from "./handlers/handle-reg.js";
 
 
 export default async function handleMessage (rawData: RawData, wsClient: CustomWebSocket) {

@@ -1,8 +1,8 @@
-import { CustomWebSocket } from "../../../index";
-import { regUserInDb } from "../../database/database";
-import getIsUserInvalid from "../../utils/get-is-user-invalid";
-import { getUserRegisteredMessage } from "../../utils/get-success-messages";
-import { IParsedMessage } from "../handle-message.type";
+import { CustomWebSocket } from "../../../index.js";
+import { regUserInDb } from "../../database/database.js";
+import getIsUserInvalid from "../../utils/get-is-user-invalid.js";
+import { getUserRegisteredMessage } from "../../utils/get-success-messages.js";
+import { IParsedMessage } from "../handle-message.type.js";
 
 export const handleReg = async (
   parsedMessage: IParsedMessage,

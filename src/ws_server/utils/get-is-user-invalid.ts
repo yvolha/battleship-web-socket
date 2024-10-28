@@ -1,4 +1,4 @@
-import { usersDb } from "../database/database";
+import { usersDb } from "../database/database.js";
 
 enum VALIDATION_ERRORS {
     LENGTH_TOO_SHORT = "Length is too short.",
