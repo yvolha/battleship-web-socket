@@ -1,0 +1,1 @@
+export type IShipTypes = "small" | "medium" | "large" | "huge";
