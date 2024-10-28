@@ -34,6 +34,10 @@ export default async function handleMessage (rawData: RawData, wsClient: CustomW
     case WS_MESSAGE_TYPES.randomAttack:
         // handler
       break;
+    
+    case WS_MESSAGE_TYPES.single_play:
+    // handler
+    break;
 
     case WS_MESSAGE_TYPES.finish:
         // handler
