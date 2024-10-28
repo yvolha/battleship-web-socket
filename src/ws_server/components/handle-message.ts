@@ -8,6 +8,7 @@ import { handleCreateRoom } from "./handlers/handle-create-room.js";
 import { handleAddUserToRoom } from "./handlers/handle-add-user-to-room.js";
 import { handleAttack } from "./handlers/handle-attack.js";
 import { handleAddShips } from "./handlers/handle-add-ships.js";
+import { handleSinglePlay } from "./handlers/handle-single-play.js";
 
 export default async function handleMessage (rawData: RawData, wsClient: CustomWebSocket) {
   const parsedMessage: IParsedMessage = JSON.parse(rawData.toString());
@@ -39,7 +40,7 @@ export default async function handleMessage (rawData: RawData, wsClient: CustomW
         break;
     
     case WS_MESSAGE_TYPES.single_play:
-        // handler
+        handleSinglePlay(wsClient);
         break;
 
     case WS_MESSAGE_TYPES.finish:

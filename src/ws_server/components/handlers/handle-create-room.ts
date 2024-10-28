@@ -7,6 +7,8 @@ import { sendAvailableRooms } from "./update-rooms.js";
 export const handleCreateRoom = (wsClient: CustomWebSocket) => {
     const index = wsClient.id;
     const name = usersDb[index].name;
+
+    let room;
   
     const roomByThisUserIndex = roomsDb.findIndex((room) =>
       room.roomUsers.some((user) => user.index === wsClient.id)
@@ -14,6 +16,7 @@ export const handleCreateRoom = (wsClient: CustomWebSocket) => {
   
     if (name && roomByThisUserIndex === -1) {
       const roomId = createGameRoomId();
+      room = roomId;
   
       roomsDb.push({
         roomId: roomId,
@@ -29,4 +32,6 @@ export const handleCreateRoom = (wsClient: CustomWebSocket) => {
     }
   
     sendAvailableRooms();
+
+    return room;
   };
