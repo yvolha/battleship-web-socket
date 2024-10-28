@@ -5,7 +5,6 @@ import { IParsedMessage } from "./handle-message.type.js";
 import { WS_MESSAGE_TYPES } from "../constants/message-types.js";
 import { handleReg } from "./handlers/handle-reg.js";
 
-
 export default async function handleMessage (rawData: RawData, wsClient: CustomWebSocket) {
   const parsedMessage: IParsedMessage = JSON.parse(rawData.toString());
   console.log(parsedMessage);
