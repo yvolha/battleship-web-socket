@@ -35,16 +35,16 @@ export default async function handleMessage (rawData: RawData, wsClient: CustomW
         break;
 
     case WS_MESSAGE_TYPES.randomAttack:
-        // handler
-      break;
+        handleAttack(parsedMessage);
+        break;
     
     case WS_MESSAGE_TYPES.single_play:
-    // handler
-    break;
+        // handler
+        break;
 
     case WS_MESSAGE_TYPES.finish:
         // handler
-      break;
+        break;
 
     default:
       console.log(ERROR_MESSAGES.UNKNOWN_ERROR);

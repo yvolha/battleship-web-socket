@@ -1,5 +1,5 @@
 export interface IParsedMessage {
     type: string;
-    data: object;
+    data: Record<string,string>;
     id: number;
 }

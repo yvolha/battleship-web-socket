@@ -45,7 +45,6 @@ export const handleAddShips = (parsedMessage: IParsedMessage) => {
         }
       });
     }
-    console.log('boardsDb',JSON.stringify(boardsDb));
   };
 
   
