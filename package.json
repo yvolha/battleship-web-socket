@@ -1,11 +1,11 @@
 {
     "name": "ws_task",
     "version": "1.0.0",
-    "description": "Template for the WebSocket remote control task",
-    "main": "index.js",
+    "description": "WebSocket task",
+    "main": "index.ts",
     "type": "module",
     "scripts": {
-        "start": "npx nodemon",
+        "start": "node --import ./ts-loader.js ./src/index.ts",
         "build": "npm run build && node dist/server",
         "lint": "eslint . --ext .ts --fix"
     },
@@ -13,11 +13,11 @@
     "keywords": [],
     "license": "ISC",
     "dependencies": {
-        "typescript": "^5.6.3",
         "ws": "^8.18.0"
     },
     "devDependencies": {
         "@types/node": "^22.8.1",
+        "@types/ws": "^8.5.12",
         "@typescript-eslint/eslint-plugin": "^8.11.0",
         "@typescript-eslint/parser": "^8.11.0",
         "cross-env": "^7.0.3",
@@ -26,6 +26,7 @@
         "eslint-plugin-prettier": "^5.2.1",
         "nodemon": "^3.1.7",
         "prettier": "^3.3.3",
-        "ts-node": "^10.9.2"
+        "ts-node": "^10.9.2",
+        "typescript": "^5.6.3"
     }
 }
