@@ -12,7 +12,6 @@ import { handleSinglePlay } from "./handlers/handle-single-play.js";
 
 export default async function handleMessage (rawData: RawData, wsClient: CustomWebSocket) {
   const parsedMessage: IParsedMessage = JSON.parse(rawData.toString());
-  console.log(parsedMessage);
 
   switch (parsedMessage.type) {
     case WS_MESSAGE_TYPES.reg:
