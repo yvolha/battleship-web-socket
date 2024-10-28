@@ -1,6 +1,6 @@
-import { wss } from "../../../index";
-import { WS_MESSAGE_TYPES } from "../../constants/message-types";
-import { winnersDb } from "../../database/database";
+import { wss } from "../../../index.js";
+import { WS_MESSAGE_TYPES } from "../../constants/message-types.js";
+import { winnersDb } from "../../database/database.js";
 
 export const sendUpdateWinners = () => {
     wss.clients.forEach((wsClient) => {

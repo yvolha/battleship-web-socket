@@ -4,6 +4,8 @@ import { CustomWebSocket } from "../../index.js";
 import { IParsedMessage } from "./handle-message.type.js";
 import { WS_MESSAGE_TYPES } from "../constants/message-types.js";
 import { handleReg } from "./handlers/handle-reg.js";
+import { handleCreateRoom } from "./handlers/handle-create-room.js";
+import { handleAddUserToRoom } from "./handlers/handle-add-user-to-room.js";
 
 export default async function handleMessage (rawData: RawData, wsClient: CustomWebSocket) {
   const parsedMessage: IParsedMessage = JSON.parse(rawData.toString());
@@ -12,15 +14,15 @@ export default async function handleMessage (rawData: RawData, wsClient: CustomW
   switch (parsedMessage.type) {
     case WS_MESSAGE_TYPES.reg:
         handleReg(parsedMessage, wsClient, WS_MESSAGE_TYPES.reg);
-      break;
+        break;
 
     case WS_MESSAGE_TYPES.create_room:
-      // handler
+        handleCreateRoom(wsClient);
       break;
 
     case WS_MESSAGE_TYPES.add_user_to_room:
-      // handler
-      break;
+        handleAddUserToRoom(parsedMessage, wsClient);
+        break;
 
     case WS_MESSAGE_TYPES.add_ships:
       // handler

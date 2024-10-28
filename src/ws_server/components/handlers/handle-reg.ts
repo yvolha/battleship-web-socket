@@ -3,6 +3,8 @@ import { regUserInDb } from "../../database/database.js";
 import getIsUserInvalid from "../../utils/get-is-user-invalid.js";
 import { getUserRegisteredMessage } from "../../utils/get-success-messages.js";
 import { IParsedMessage } from "../handle-message.type.js";
+import { sendAvailableRooms } from "./update-rooms.js";
+import { sendUpdateWinners } from "./update-winners.js";
 
 export const handleReg = async (
   parsedMessage: IParsedMessage,
@@ -43,5 +45,9 @@ export const handleReg = async (
 
     await regUserInDb(index, name, password);
     console.log(getUserRegisteredMessage(index, name));
+
+    
+    sendUpdateWinners();
+    sendAvailableRooms();
   }
 };
